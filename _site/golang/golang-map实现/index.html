@@ -1,0 +1,531 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.13.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Golang map实现 - Conan’s zone</title>
+<meta name="description" content="Golang map实现">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Conan's zone">
+<meta property="og:title" content="Golang map实现">
+<meta property="og:url" content="http://localhost:4000/golang/golang-map%E5%AE%9E%E7%8E%B0/">
+
+
+  <meta property="og:description" content="Golang map实现">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/pic/golang/go-hmap%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2018-10-06T00:00:00+08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/golang/golang-map%E5%AE%9E%E7%8E%B0/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Conan",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Conan's zone Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Conan's zone</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/" >Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/golang" >Golang</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="/categories/#golang" itemprop="item"><span itemprop="name">Golang</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Golang map实现</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/avatar.jpg" alt="Conan" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Conan</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        a person
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Shanghai,China</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:350496951@qq.com"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/Jackckr"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Golang map实现">
+    <meta itemprop="description" content="Golang map实现">
+    <meta itemprop="datePublished" content="October 06, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Golang map实现
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h1 id="golang-map实现">Golang map实现</h1>
+
+<h2 id="前言">前言</h2>
+
+<p>golang在自己的内置类型中实现了hashmap这种数据结构，而且这个hashmap的key支持任意能计算hash值的数据类型，可以说是十分方便了。因此我在各种项目中都大量使用了这种数据结构，但是越是这种通用型的数据结构，想要在某个特定的场景中用好，却不是一件那么简单的事情，所以为了不给项目埋坑，深入了解hashmap的实现就是一件十分有必要的事情了。</p>
+
+<h2 id="map基本原理">map基本原理</h2>
+
+<p>hashmap是一个十分常见也是十分经典的数据结构，而通常一个hashmap需要将key进行hash计算，然后映射到一个数组下标上，然后通过数组下标访问，达到O(1)时间复杂度快速访问，但是无论多美完美的hash算法，都会导致多个key的最后计算结果相同——即hash碰撞。而解决hash碰撞也有多种方法，比如退避法，拉链法等等。其中，拉链法是最为常见也是最为有效的方法，因此golang的hashmap也是采用的拉链法，但是golang在普通的拉链法上又做了许多性能上的优化。</p>
+
+<h2 id="golang-hashmap基本概念原理">golang hashmap基本概念原理</h2>
+
+<p>golang的hashmap是由一个个的桶(bucket)组成，每个桶额定可以放8个元素，通过hash算法定位桶的下标，然后在每个桶中再进行查找，如果某个hash值的元素个数超过8，那么则在桶后面拉链处一个新桶（overflow buckets），用来装新数据。然后除此外，这里还有一个loadFactor的概念，即桶平均的装载率。桶的装载率直接影响了overflow buckets的数目和内存使用率，通过作者测试，当loadFactor在6.5的时候能达到最好的平衡。</p>
+
+<p><img src="http://localhost:4000/assets/pic/golang/go-map介绍.png" alt="go-map介绍" /></p>
+
+<h2 id="数据结构">数据结构</h2>
+<p><img src="http://localhost:4000/assets/pic/golang/go-hmap数据结构.png" alt="go-map数据结构" />
+在上述数据结构中，最为重要的就是bmap这个数据结构了，也就是上文介绍的一个bucket。bmap包含了两部分，第一个部分是tophash这样一个数据结构，这个主要作为在bucket中进行快速定位的一种“filter”，然后再后面就是8个key和8个value的数据空间，这部分数据的访问全部通过地址pointor+下标偏移来完成。然后最后一个就是一个pointor，用来指向overflow的bucket数据。</p>
+<h2 id="详细介绍">详细介绍</h2>
+<p>上面简单介绍了golang hashmap的基本原理，那么下面就通过增删改查操作来详细介绍一下它的一些实现细节，并通过这个来指导我们平时自己的使用</p>
+<h3 id="map初始化">map初始化</h3>
+<p>map的初始化通过makemap方法实现，该方法会做一些合法性判断，然后如果传入了初始化大小，则会根据大小和loadFactor来创建对应数量的bucket</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func overLoadFactor(count int64, B uint8) bool {
+	// TODO: rewrite to use integer math and comparison?
+	return count &gt;= bucketCnt &amp;&amp; float32(count) &gt;= loadFactor*float32((uintptr(1)&lt;&lt;B))
+}
+</code></pre></div></div>
+<p>如果没有传大小，那么只会初始化map的数据结构，而不会创建任何的bucket——lazy init。</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#golang" class="page__taxonomy-item" rel="tag">golang</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-10-06T00:00:00+08:00">October 06, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Golang+map%E5%AE%9E%E7%8E%B0%20http%3A%2F%2Flocalhost%3A4000%2Fgolang%2Fgolang-map%25E5%25AE%259E%25E7%258E%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fgolang%2Fgolang-map%25E5%25AE%259E%25E7%258E%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fgolang%2Fgolang-map%25E5%25AE%259E%25E7%258E%25B0%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fgolang%2Fgolang-map%25E5%25AE%259E%25E7%258E%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/golang/go-redis%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%AE%9E%E7%8E%B0/" class="pagination--pager" title="Go Redis连接池实现
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/pic/golang/go-redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/golang/go-redis%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%AE%9E%E7%8E%B0/" rel="permalink">Go Redis连接池实现
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">go-redis连接池实现
+背景
+因为inspector需要正式接入redis的秒级监控，在秒级监控场景下，如果redis driver的使用有任何不当，都有可能导致线上故障，所以特地了解了一下go-redis driver的具体实现：包括连接池实现方式，连接方式，失败重连机制，自动重连机制等。
+
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Conan. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  </body>
+</html>

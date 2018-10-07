@@ -1,2 +1,1 @@
-# conan.github.io
-conans's blog
+# this is conan's blog
