@@ -1,4 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-07T13:11:12+08:00</updated><id>http://localhost:4000/</id><title type="html">Conan’s zone</title><subtitle>To learn and to known why</subtitle><author><name>Conan</name></author><entry><title type="html">Golang map实现</title><link href="http://localhost:4000/golang/golang-map%E5%AE%9E%E7%8E%B0/" rel="alternate" type="text/html" title="Golang map实现" /><published>2018-10-06T00:00:00+08:00</published><updated>2018-10-06T00:00:00+08:00</updated><id>http://localhost:4000/golang/golang-map%E5%AE%9E%E7%8E%B0</id><content type="html" xml:base="http://localhost:4000/golang/golang-map%E5%AE%9E%E7%8E%B0/">&lt;h1 id=&quot;golang-map实现&quot;&gt;Golang map实现&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-08T01:02:04+08:00</updated><id>http://localhost:4000/</id><title type="html">Conan’s zone</title><subtitle>To learn and to known why</subtitle><author><name>Conan</name></author><entry><title type="html">利用jekyll+github pages搭建个人博客总结</title><link href="http://localhost:4000/jekyll/%E5%88%A9%E7%94%A8jekyll+github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/" rel="alternate" type="text/html" title="利用jekyll+github pages搭建个人博客总结" /><published>2018-10-07T00:00:00+08:00</published><updated>2018-10-07T00:00:00+08:00</updated><id>http://localhost:4000/jekyll/%E5%88%A9%E7%94%A8jekyll+github%20pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/jekyll/%E5%88%A9%E7%94%A8jekyll+github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/">&lt;h1 id=&quot;背景&quot;&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;博主一直想搭建一个可以自主管理的博客，然后去网上搜了一下后，发现GitHub pages就提供这样一种功能，能普通用户&lt;strong&gt;免费&lt;/strong&gt;在上面进行搭站，于是就根据官方文档和各种网上资料进行自己搭站尝试。此间过程有些曲折，所以也把过程记录下来，提供给其他的朋友进行参考。&lt;/p&gt;
+
+&lt;h1 id=&quot;基础知识&quot;&gt;基础知识&lt;/h1&gt;
+
+&lt;p&gt;要使用jekyll+github pages搭站，需要学些一个基础的知识，这样才能在使用的过程中得心应手。关于jekyll的用法，如果有不熟悉的，可以参考博主的另一篇文章&lt;a href=&quot;http://localhost:4000/jekyll/jekyll基本概念介绍和安装&quot;&gt;jekyll基本概念介绍和安装&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;如果看到这里的，博主就假设已经知道jekyll是个什么东西，以及会markdown等语言了。那么接下来就给大家介绍怎么利用github pages来搭建自己的博客站。&lt;/p&gt;
+
+&lt;h1 id=&quot;搭建步骤&quot;&gt;搭建步骤&lt;/h1&gt;
+
+&lt;h2 id=&quot;第一步物色自己喜欢的模板&quot;&gt;第一步：物色自己喜欢的模板&lt;/h2&gt;
+&lt;p&gt;github pages本身提供了一些简单的模板可以在setting中进行配置，不过可选择的太少，所以如果没有喜欢的可以去其它地方多挑几个找到自己喜欢的模板。
+博主在进行搜索过程中，无意找到了一位大神的blog&lt;a href=&quot;http://cenalulu.github.io/jekyll/choose-a-template-for-your-blog/&quot;&gt;Jekyll&amp;amp;Github Pages博客模板挑选和配置&lt;/a&gt;，然后里面介绍了几个找模板的地方，这里接只接做一个搬运工，将这几个地址copy过来了&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;jekyllthemes.org&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekythemes.net&quot;&gt;jekythemes.net&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mademistakes.com/work/jekyll-themes/&quot;&gt;mademistakes&lt;/a&gt; (最后博主我也是在这个大神的几个模板中挑中了现在这个模板)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;第二步github创建blog项目&quot;&gt;第二步：github创建blog项目&lt;/h2&gt;
+&lt;p&gt;按照官方文档&lt;a href=&quot;https://pages.github.com/&quot;&gt;github pages&lt;/a&gt;新建一个github pages项目，并以username.github.io格式命名新分支。&lt;/p&gt;
+
+&lt;h2 id=&quot;第三步导入模板&quot;&gt;第三步：导入模板&lt;/h2&gt;
+&lt;p&gt;导入模板有两种方式：一种是本地自己直接clone模板项目的github文件，然后放到自己项目中进行编译，还有一种是通过远程的方式，自己的项目中没有模板项目的任何文件。这两种的区别是，远程的每次build的时候需要通过去远端拉取相关资源，如果本地调试的时候，网路不好可能会导致项目启动很慢。但博主作为一个洁癖，为了使自己的项目看起来干净，所以选择了第二种方式。
+如果使用第二种远端的方式，那么只需要在项目的根目录下创建一个_config.yml的文件，并将主题配置写进文件就可以了，还是以博主自己为例：
+&lt;img src=&quot;http://localhost:4000/assets/pic/jekyll/config文件示意图.png&quot; alt=&quot;_config文件示意图&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后在_config.yml文件中写入remote-theme配置信息&lt;/p&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;remote_theme           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;mmistakes/minimal-mistakes&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;第四步导入博客&quot;&gt;第四步：导入博客&lt;/h2&gt;
+&lt;p&gt;如果已经有博客了，那么就将博客直接导入到_posts目录下，并按照模板以及jekyll的配置规则，进行配置就好了。&lt;/p&gt;
+
+&lt;h2 id=&quot;第五步本地调试并推送到github中&quot;&gt;第五步：本地调试并推送到github中&lt;/h2&gt;
+&lt;p&gt;到了这一步，那么恭喜你，你离成功就只差一步之遥了。在本地调试，布局等都符合预期后，就可以直接将项目push到github中了，然后等待github page帮你构建项目，并启动就好了。&lt;/p&gt;
+
+&lt;h2 id=&quot;第六步欣赏自己的博客站&quot;&gt;第六步：欣赏自己的博客站&lt;/h2&gt;
+&lt;p&gt;在github的项目setting页面，在github pages配置中，就可以看到自己的博客站域名，点击后就可以看到属于自己的博客了👏
+&lt;img src=&quot;http://localhost:4000/assets/pic/jekyll/查看博客站域名.png&quot; alt=&quot;查看自己域名&quot; /&gt;&lt;/p&gt;</content><author><name>Conan</name></author><summary type="html">背景</summary></entry><entry><title type="html">Jekyll基本概念介绍和安装</title><link href="http://localhost:4000/jekyll/jekyll%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%AE%89%E8%A3%85/" rel="alternate" type="text/html" title="Jekyll基本概念介绍和安装" /><published>2018-10-07T00:00:00+08:00</published><updated>2018-10-07T00:00:00+08:00</updated><id>http://localhost:4000/jekyll/jekyll%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%AE%89%E8%A3%85</id><content type="html" xml:base="http://localhost:4000/jekyll/jekyll%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%AE%89%E8%A3%85/">&lt;blockquote&gt;
+  &lt;p&gt;本文旨在简单介绍博客站搭建工具jekyll的基本概念和用法&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;jekyll是什么&quot;&gt;jekyll是什么？&lt;/h1&gt;
+
+&lt;p&gt;对于刚刚接触jekyll这个博客搭建神器的小白——比如我，来说，对于jekyll这个东西应该会感到极其陌生吧。所以这里简要介绍一下jekyll是什么：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Transform your plain text into static websites and blogs.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这个是&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;jekyll官网&lt;/a&gt;首页的一句话。博主学习后按照理解翻译过来就是：jekyll是一个基于ruby将纯文本转换成静态网站和博客的一个工具，该工具支持将markdown，liquid，HTML&amp;amp;CSS等转换成静态网站。
+所以通过上述描述，我们知道，这个工具需要一个环境和支持三种“语言”文本格式，即：&lt;strong&gt;ruby&lt;/strong&gt; 环境+&lt;strong&gt;markdown&lt;/strong&gt;、&lt;strong&gt;liquid&lt;/strong&gt;、&lt;strong&gt;HTML&amp;amp;CSS&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;ruby&quot;&gt;ruby&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;ruby是一种面向对象、命令式、函数式、动态的通用编程语言&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以上介绍摘自百度百科。因为博主不是rubyer，所以就不做过多介绍，大家可以通过ruby -v来检查自己电脑是否安装有ruby，如果没有或者版本过低，可以按照官网的介绍进行安装
+&lt;a href=&quot;https://gems.ruby-china.com/&quot;&gt;ruby中国官网&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;markdown&quot;&gt;markdown&lt;/h2&gt;
+&lt;p&gt;markdown是一种纯文本的格式化标记语言，通过打标签等方式，来给纯文本文章加上格式，并可以方便的转换成html等网页格式，默认后缀名为md。所以通过这里，就发现，markdown真的是一个天然用来写博客的语言。具体语法可以自行进行搜索。&lt;/p&gt;
+
+&lt;h2 id=&quot;liquid&quot;&gt;liquid&lt;/h2&gt;
+&lt;p&gt;liquid是一个面向html的模板语言，可以在html中方便的使用来达到根据不同的数据参数生成不同的html页面的功能。&lt;/p&gt;
+
+&lt;h2 id=&quot;htmlcss&quot;&gt;html&amp;amp;&amp;amp;css&lt;/h2&gt;
+&lt;p&gt;这个就不多做介绍了&lt;/p&gt;
+
+&lt;h1 id=&quot;jekyll安装&quot;&gt;jekyll安装&lt;/h1&gt;
+&lt;p&gt;按照&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;jekyll官网&lt;/a&gt;的介绍，安装需要执行以下一个命令：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;这个命令安装了两个东西，一个是bundler——ruby是用的依赖管理工具，一个就是我们需要的jekyll了。这两个都需要装好才能使用。
+可是有些mac版本os因为比较新，然后apple官方对于权限的管理变得很严，所以在安装的过程中可能会出现以下两种报错：&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;ERROR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;no&quot;&gt;While&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;executing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Gem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;FilePermissionError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;You&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;don&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;have&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;permissions&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/Library/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ruby&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Gems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;这种错就是很常见的权限问题，所以只需要sudo一下就可以了。
+除此之外，还可能会有这样的报错:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;ERROR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;no&quot;&gt;While&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;executing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Gem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;FilePermissionError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;You&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;don&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;have&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;permissions&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/usr/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;这个报错是说尽管sudo了，但是依旧还是不能在/usr/bin目录下取的安装所需要的权限，此时的解决方法就是换一个目录，即命令如下&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;gem install &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; /usr/local/bin bundler jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;这样就可以顺利的安装好jekyll了&lt;/p&gt;
+
+&lt;h1 id=&quot;jekyll使用&quot;&gt;jekyll使用&lt;/h1&gt;
+&lt;p&gt;只需要创建自己的博客目录，并执行启动命令就可以了：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir conan &amp;amp; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;conan
+bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;然后你会看到类似的日志，此时再浏览器中访问http://127.0.0.1:4000 就可以了&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Configuration file: /Users/apple/Workspace/jackckr.github.io/_config.yml
+            Source: /Users/apple/Workspace/jackckr.github.io
+       Destination: /Users/apple/Workspace/jackckr.github.io/_site
+ Incremental build: disabled. Enable with &lt;span class=&quot;nt&quot;&gt;--incremental&lt;/span&gt;
+      Generating...
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+   GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
+                    &lt;span class=&quot;k&quot;&gt;done in &lt;/span&gt;22.817 seconds.
+ Auto-regeneration: enabled &lt;span class=&quot;k&quot;&gt;for 
+    &lt;/span&gt;Server address: http://127.0.0.1:4000
+  Server running... press ctrl-c to stop.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;在jekyll启动的时候，就会扫描当前目录下的所有文件，然后根据约定的语法规则生成博客站。因为我们通常使用的时候，都是直接下载第三方写好的模板，然后放入自己的博客就可以了，所以这里不详细介绍这些规则，有兴趣的朋友可以直接去&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;jekyll官网&lt;/a&gt;学习。&lt;/p&gt;
+&lt;h1 id=&quot;jekyll基本概念介绍&quot;&gt;jekyll基本概念介绍&lt;/h1&gt;
+
+&lt;h2 id=&quot;front-matter&quot;&gt;Front matter&lt;/h2&gt;
+&lt;p&gt;一开始接触这个词汇的时候，博主我表示真是一脸懵逼😲。然后也是测试，看别人的写法，然后才理解这个的含义。下面举例如下：&lt;/p&gt;
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;posts&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;conan&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+markdown正文
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;如上面所示，front matter顾名思义，就是在每个markdown文件的开头加上一些“标签”（以“—”符号开头和结尾），来表示这个文档的属性，如上面所说jekyll会扫描所有文件，然后这些标签就会被jekyll所识别，然后就会影响文章html的生成格式。比如上面的layout: posts就表示这篇用posts这个“格式”来展示文章，并且显示的作者是conan。
+front matter里面的标签，有些事jekyll的保留使用的key(如layout)，有些则是由具体的模板来定义使用的(如author_profile)，所以这些需要查阅具体的模板文档。&lt;/p&gt;
+
+&lt;h2 id=&quot;layouts&quot;&gt;layouts&lt;/h2&gt;
+&lt;p&gt;jekyll布局模板。在根目录下有一个_layouts目录，然后里面存放的html文件就是布局文件，文件名就是layouts的值，比如如果有&lt;strong&gt;posts.html&lt;/strong&gt;，那么就可以在front matter中指定layout为&lt;strong&gt;posts&lt;/strong&gt;，那么博客就会以posts.html中定义的格式进行展示。这个可以自己写，也可以直接使用第三方的模板。&lt;/p&gt;
+
+&lt;h2 id=&quot;posts&quot;&gt;posts&lt;/h2&gt;
+&lt;p&gt;在根目录下有一个_posts目录，顾名但我思不了义┑(￣Д ￣)┍，这个目录就是存放我们markdown格式博客的地方。在这里，可以有任意数量和深度的文件夹来组织我们的markdown文件，但是markdown文件名却必须有规定的格式：&lt;strong&gt;YYYY-MM-DD-title&lt;/strong&gt;,这里必须是4位数的年-2位数的月-2位数的日-文章名，其中文章名可以有任意字符包括“-”。只有这种格式的文章才会被jekyll识别，否则是不会被用来生成html的。。。。&lt;/p&gt;
+
+&lt;h2 id=&quot;pages&quot;&gt;pages&lt;/h2&gt;
+&lt;p&gt;在根目录下通常还有一个_pages的目录，这个目录下存放的就是一些与博客无关，比如home，about，404等单页面(可以是md或html格式)，这些页面的文件名会直接被用在url，或者通过permalink这样一个front matter去指定。&lt;/p&gt;
+
+&lt;h2 id=&quot;data-files&quot;&gt;data files&lt;/h2&gt;
+&lt;p&gt;在根目录下有一个_data的目录，这里主要是存放一些跟导航栏相关的配置信息，所以通常会有一个navigation.html文件，然后你可以根据模板的要求，去配置一些导航栏。&lt;/p&gt;
+
+&lt;h2 id=&quot;collections&quot;&gt;collections&lt;/h2&gt;
+&lt;p&gt;这个主要是将多个同一类型的博客进行统一管理的功能，普通用法基本用不上，有兴趣的朋友可以去官网自己学习使用。&lt;/p&gt;</content><author><name>Conan</name></author><summary type="html">本文旨在简单介绍博客站搭建工具jekyll的基本概念和用法</summary></entry><entry><title type="html">Golang map实现</title><link href="http://localhost:4000/golang/golang-map%E5%AE%9E%E7%8E%B0/" rel="alternate" type="text/html" title="Golang map实现" /><published>2018-10-06T00:00:00+08:00</published><updated>2018-10-06T00:00:00+08:00</updated><id>http://localhost:4000/golang/golang-map%E5%AE%9E%E7%8E%B0</id><content type="html" xml:base="http://localhost:4000/golang/golang-map%E5%AE%9E%E7%8E%B0/">&lt;h1 id=&quot;golang-map实现&quot;&gt;Golang map实现&lt;/h1&gt;
 
 &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
 

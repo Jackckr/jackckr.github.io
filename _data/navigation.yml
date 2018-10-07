@@ -1,5 +1,9 @@
 main:
   - title: "Home"
     url: /
+  - title: "Total Blog"
+    url: /total
   - title: "Golang"
     url: /golang
+  - title: "Jekyll"
+    url: /jekyll

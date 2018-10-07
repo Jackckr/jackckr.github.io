@@ -1,0 +1,695 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.13.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Jekyll基本概念介绍和安装 - Conan’s zone</title>
+<meta name="description" content="  本文旨在简单介绍博客站搭建工具jekyll的基本概念和用法">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Conan's zone">
+<meta property="og:title" content="Jekyll基本概念介绍和安装">
+<meta property="og:url" content="http://localhost:4000/jekyll/jekyll%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%AE%89%E8%A3%85/">
+
+
+  <meta property="og:description" content="  本文旨在简单介绍博客站搭建工具jekyll的基本概念和用法">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-10-07T00:00:00+08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/jekyll/jekyll%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%AE%89%E8%A3%85/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Conan",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Conan's zone Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Conan's zone</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/" >Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/total" >Total Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/golang" >Golang</a>
+            </li><li class="masthead__menu-item">
+              <a href="/jekyll" >Jekyll</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="/categories/#jekyll" itemprop="item"><span itemprop="name">Jekyll</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Jekyll基本概念介绍和安装</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/avatar.jpg" alt="Conan" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Conan</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        a person
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Shanghai,China</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:350496951@qq.com"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/Jackckr"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Jekyll基本概念介绍和安装">
+    <meta itemprop="description" content="  本文旨在简单介绍博客站搭建工具jekyll的基本概念和用法">
+    <meta itemprop="datePublished" content="October 07, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Jekyll基本概念介绍和安装
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> </h4></header>
+              <ul class="toc__menu">
+  <li><a href="#jekyll是什么">jekyll是什么？</a>
+    <ul>
+      <li><a href="#ruby">ruby</a></li>
+      <li><a href="#markdown">markdown</a></li>
+      <li><a href="#liquid">liquid</a></li>
+      <li><a href="#htmlcss">html&amp;&amp;css</a></li>
+    </ul>
+  </li>
+  <li><a href="#jekyll安装">jekyll安装</a></li>
+  <li><a href="#jekyll使用">jekyll使用</a></li>
+  <li><a href="#jekyll基本概念介绍">jekyll基本概念介绍</a>
+    <ul>
+      <li><a href="#front-matter">Front matter</a></li>
+      <li><a href="#layouts">layouts</a></li>
+      <li><a href="#posts">posts</a></li>
+      <li><a href="#pages">pages</a></li>
+      <li><a href="#data-files">data files</a></li>
+      <li><a href="#collections">collections</a></li>
+    </ul>
+  </li>
+</ul>
+            </nav>
+          </aside>
+        
+        <blockquote>
+  <p>本文旨在简单介绍博客站搭建工具jekyll的基本概念和用法</p>
+</blockquote>
+
+<h1 id="jekyll是什么">jekyll是什么？</h1>
+
+<p>对于刚刚接触jekyll这个博客搭建神器的小白——比如我，来说，对于jekyll这个东西应该会感到极其陌生吧。所以这里简要介绍一下jekyll是什么：</p>
+
+<blockquote>
+  <p>Transform your plain text into static websites and blogs.</p>
+</blockquote>
+
+<p>这个是<a href="https://jekyllrb.com/">jekyll官网</a>首页的一句话。博主学习后按照理解翻译过来就是：jekyll是一个基于ruby将纯文本转换成静态网站和博客的一个工具，该工具支持将markdown，liquid，HTML&amp;CSS等转换成静态网站。
+所以通过上述描述，我们知道，这个工具需要一个环境和支持三种“语言”文本格式，即：<strong>ruby</strong> 环境+<strong>markdown</strong>、<strong>liquid</strong>、<strong>HTML&amp;CSS</strong>。</p>
+
+<h2 id="ruby">ruby</h2>
+<blockquote>
+  <p>ruby是一种面向对象、命令式、函数式、动态的通用编程语言</p>
+</blockquote>
+
+<p>以上介绍摘自百度百科。因为博主不是rubyer，所以就不做过多介绍，大家可以通过ruby -v来检查自己电脑是否安装有ruby，如果没有或者版本过低，可以按照官网的介绍进行安装
+<a href="https://gems.ruby-china.com/">ruby中国官网</a></p>
+
+<h2 id="markdown">markdown</h2>
+<p>markdown是一种纯文本的格式化标记语言，通过打标签等方式，来给纯文本文章加上格式，并可以方便的转换成html等网页格式，默认后缀名为md。所以通过这里，就发现，markdown真的是一个天然用来写博客的语言。具体语法可以自行进行搜索。</p>
+
+<h2 id="liquid">liquid</h2>
+<p>liquid是一个面向html的模板语言，可以在html中方便的使用来达到根据不同的数据参数生成不同的html页面的功能。</p>
+
+<h2 id="htmlcss">html&amp;&amp;css</h2>
+<p>这个就不多做介绍了</p>
+
+<h1 id="jekyll安装">jekyll安装</h1>
+<p>按照<a href="https://jekyllrb.com/">jekyll官网</a>的介绍，安装需要执行以下一个命令：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install bundler jekyll
+</code></pre></div></div>
+<p>这个命令安装了两个东西，一个是bundler——ruby是用的依赖管理工具，一个就是我们需要的jekyll了。这两个都需要装好才能使用。
+可是有些mac版本os因为比较新，然后apple官方对于权限的管理变得很严，所以在安装的过程中可能会出现以下两种报错：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">ERROR</span><span class="p">:</span>  <span class="no">While</span> <span class="n">executing</span> <span class="n">gem</span> <span class="o">...</span> <span class="p">(</span><span class="no">Gem</span><span class="o">::</span><span class="no">FilePermissionError</span><span class="p">)</span>
+    <span class="no">You</span> <span class="n">don</span><span class="err">'</span><span class="n">t</span> <span class="n">have</span> <span class="n">write</span> <span class="n">permissions</span> <span class="k">for</span> <span class="n">the</span> <span class="sr">/Library/</span><span class="no">Ruby</span><span class="o">/</span><span class="no">Gems</span><span class="o">/</span><span class="mf">2.3</span><span class="o">.</span><span class="mi">0</span> <span class="n">directory</span><span class="o">.</span>
+</code></pre></div></div>
+<p>这种错就是很常见的权限问题，所以只需要sudo一下就可以了。
+除此之外，还可能会有这样的报错:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">ERROR</span><span class="p">:</span>  <span class="no">While</span> <span class="n">executing</span> <span class="n">gem</span> <span class="o">...</span> <span class="p">(</span><span class="no">Gem</span><span class="o">::</span><span class="no">FilePermissionError</span><span class="p">)</span>
+    <span class="no">You</span> <span class="n">don</span><span class="err">'</span><span class="n">t</span> <span class="n">have</span> <span class="n">write</span> <span class="n">permissions</span> <span class="k">for</span> <span class="n">the</span> <span class="sr">/usr/</span><span class="n">bin</span> <span class="n">directory</span><span class="o">.</span>
+</code></pre></div></div>
+<p>这个报错是说尽管sudo了，但是依旧还是不能在/usr/bin目录下取的安装所需要的权限，此时的解决方法就是换一个目录，即命令如下</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>gem install <span class="nt">-n</span> /usr/local/bin bundler jekyll
+</code></pre></div></div>
+<p>这样就可以顺利的安装好jekyll了</p>
+
+<h1 id="jekyll使用">jekyll使用</h1>
+<p>只需要创建自己的博客目录，并执行启动命令就可以了：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir conan &amp; <span class="nb">cd </span>conan
+bundle <span class="nb">exec </span>jekyll serve
+</code></pre></div></div>
+<p>然后你会看到类似的日志，此时再浏览器中访问http://127.0.0.1:4000 就可以了</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Configuration file: /Users/apple/Workspace/jackckr.github.io/_config.yml
+            Source: /Users/apple/Workspace/jackckr.github.io
+       Destination: /Users/apple/Workspace/jackckr.github.io/_site
+ Incremental build: disabled. Enable with <span class="nt">--incremental</span>
+      Generating...
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+   GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
+                    <span class="k">done in </span>22.817 seconds.
+ Auto-regeneration: enabled <span class="k">for 
+    </span>Server address: http://127.0.0.1:4000
+  Server running... press ctrl-c to stop.
+</code></pre></div></div>
+<p>在jekyll启动的时候，就会扫描当前目录下的所有文件，然后根据约定的语法规则生成博客站。因为我们通常使用的时候，都是直接下载第三方写好的模板，然后放入自己的博客就可以了，所以这里不详细介绍这些规则，有兴趣的朋友可以直接去<a href="https://jekyllrb.com/">jekyll官网</a>学习。</p>
+<h1 id="jekyll基本概念介绍">jekyll基本概念介绍</h1>
+
+<h2 id="front-matter">Front matter</h2>
+<p>一开始接触这个词汇的时候，博主我表示真是一脸懵逼😲。然后也是测试，看别人的写法，然后才理解这个的含义。下面举例如下：</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">posts</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">conan</span>
+<span class="na">author_profile</span><span class="pi">:</span> <span class="no">true</span>
+<span class="nn">---</span>
+markdown正文
+</code></pre></div></div>
+<p>如上面所示，front matter顾名思义，就是在每个markdown文件的开头加上一些“标签”（以“—”符号开头和结尾），来表示这个文档的属性，如上面所说jekyll会扫描所有文件，然后这些标签就会被jekyll所识别，然后就会影响文章html的生成格式。比如上面的layout: posts就表示这篇用posts这个“格式”来展示文章，并且显示的作者是conan。
+front matter里面的标签，有些事jekyll的保留使用的key(如layout)，有些则是由具体的模板来定义使用的(如author_profile)，所以这些需要查阅具体的模板文档。</p>
+
+<h2 id="layouts">layouts</h2>
+<p>jekyll布局模板。在根目录下有一个_layouts目录，然后里面存放的html文件就是布局文件，文件名就是layouts的值，比如如果有<strong>posts.html</strong>，那么就可以在front matter中指定layout为<strong>posts</strong>，那么博客就会以posts.html中定义的格式进行展示。这个可以自己写，也可以直接使用第三方的模板。</p>
+
+<h2 id="posts">posts</h2>
+<p>在根目录下有一个_posts目录，顾名但我思不了义┑(￣Д ￣)┍，这个目录就是存放我们markdown格式博客的地方。在这里，可以有任意数量和深度的文件夹来组织我们的markdown文件，但是markdown文件名却必须有规定的格式：<strong>YYYY-MM-DD-title</strong>,这里必须是4位数的年-2位数的月-2位数的日-文章名，其中文章名可以有任意字符包括“-”。只有这种格式的文章才会被jekyll识别，否则是不会被用来生成html的。。。。</p>
+
+<h2 id="pages">pages</h2>
+<p>在根目录下通常还有一个_pages的目录，这个目录下存放的就是一些与博客无关，比如home，about，404等单页面(可以是md或html格式)，这些页面的文件名会直接被用在url，或者通过permalink这样一个front matter去指定。</p>
+
+<h2 id="data-files">data files</h2>
+<p>在根目录下有一个_data的目录，这里主要是存放一些跟导航栏相关的配置信息，所以通常会有一个navigation.html文件，然后你可以根据模板的要求，去配置一些导航栏。</p>
+
+<h2 id="collections">collections</h2>
+<p>这个主要是将多个同一类型的博客进行统一管理的功能，普通用法基本用不上，有兴趣的朋友可以去官网自己学习使用。</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#jekyll" class="page__taxonomy-item" rel="tag">jekyll</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-10-07T00:00:00+08:00">October 07, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Jekyll%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%AE%89%E8%A3%85%20http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fjekyll%25E5%259F%25BA%25E6%259C%25AC%25E6%25A6%2582%25E5%25BF%25B5%25E4%25BB%258B%25E7%25BB%258D%25E5%2592%258C%25E5%25AE%2589%25E8%25A3%2585%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fjekyll%25E5%259F%25BA%25E6%259C%25AC%25E6%25A6%2582%25E5%25BF%25B5%25E4%25BB%258B%25E7%25BB%258D%25E5%2592%258C%25E5%25AE%2589%25E8%25A3%2585%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fjekyll%25E5%259F%25BA%25E6%259C%25AC%25E6%25A6%2582%25E5%25BF%25B5%25E4%25BB%258B%25E7%25BB%258D%25E5%2592%258C%25E5%25AE%2589%25E8%25A3%2585%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fjekyll%25E5%259F%25BA%25E6%259C%25AC%25E6%25A6%2582%25E5%25BF%25B5%25E4%25BB%258B%25E7%25BB%258D%25E5%2592%258C%25E5%25AE%2589%25E8%25A3%2585%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/golang/golang-map%E5%AE%9E%E7%8E%B0/" class="pagination--pager" title="Golang map实现
+">Previous</a>
+    
+    
+      <a href="/jekyll/%E5%88%A9%E7%94%A8jekyll+github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/" class="pagination--pager" title="利用jekyll+github pages搭建个人博客总结
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/jekyll/%E5%88%A9%E7%94%A8jekyll+github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/" rel="permalink">利用jekyll+github pages搭建个人博客总结
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">背景
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/pic/golang/go-hmap%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/golang/golang-map%E5%AE%9E%E7%8E%B0/" rel="permalink">Golang map实现
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Golang map实现
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/pic/golang/go-redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/golang/go-redis%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%AE%9E%E7%8E%B0/" rel="permalink">Go Redis连接池实现
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">go-redis连接池实现
+背景
+因为inspector需要正式接入redis的秒级监控，在秒级监控场景下，如果redis driver的使用有任何不当，都有可能导致线上故障，所以特地了解了一下go-redis driver的具体实现：包括连接池实现方式，连接方式，失败重连机制，自动重连机制等。
+
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Conan. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  </body>
+</html>
