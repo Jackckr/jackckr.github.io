@@ -103,7 +103,7 @@ analytics:
 author:
   name             : "Conan"
   avatar           : "assets/avatar.jpg"
-  bio              : "a person"
+  bio              : "学术而悟道"
   location         : "Shanghai,China"
   email            : #350496951@qq.com
   links:
@@ -118,7 +118,7 @@ author:
       # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "https://www.facebook.com/conan.chen.56"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Jackckr"
