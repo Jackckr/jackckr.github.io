@@ -7,3 +7,5 @@ main:
     url: /golang
   - title: "Jekyll"
     url: /jekyll
+  - title: "Algorithm"
+    url: /algorithm
