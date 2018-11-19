@@ -288,3 +288,5 @@ defaults:
       comments: # true
       share: true
       related: true
+# define header script
+head_scripts : ["http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"]
