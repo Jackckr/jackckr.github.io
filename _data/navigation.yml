@@ -9,3 +9,5 @@ main:
     url: /jekyll
   - title: "Algorithm"
     url: /algorithm
+  - title: "杂"
+    url: /nothing
